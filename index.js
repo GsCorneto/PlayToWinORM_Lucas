@@ -47,10 +47,10 @@ app.post("/usuarios/novo",  async (req,res) =>{
    res.send("Usuário inserido sob o id " + usuario.id)
 });
 
-app.get("/usuario/:id/atualizar", (req,res) => 
+app.get("/usuario/:id/atualizar", async (req,res) => 
 {
     const id = req.params.id;
-    const usuario = Usuario.findByPk(id, {raw: true});
+    const usuario = await  Usuario.findByPk(id, {raw: true});
     res.render("formUsuario", { usuario })
 });
 
