@@ -1,5 +1,5 @@
 <h1>Usuários</h1>
-<a href="/usuarios">Usuários</a>
+<a href="/usuarios/novo">Usuários</a>
 <table border="1">
     <tr>
         <td>Nickname</td>
@@ -12,7 +12,15 @@
         <td>{{this.nickname}}</td>
         <td>{{this.nome}}</td>
         <td>
-            <a href="/usuarios/{{this.id}}/atualizar">Atualizar</a>
+            <a href="/usuarios/{{this.id}}/atualizar" >Atualizar</a>
+
+            <form action="/usuarios/excluir" method="post">
+
+              <input type="hidden" value="{{this.id}}" name="id"/>
+              <input type="submit" value="Excluir"/>
+
+            </form>
+            <a href="/usuarios/{{this.id}}/cartoes">Ver cartões</a>
         </td>
       </tr>
     {{/each}}
