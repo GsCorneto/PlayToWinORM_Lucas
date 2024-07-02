@@ -1,0 +1,16 @@
+<h1>Nova Conquista</h1>
+ <form action="/jogos/{{id}}/trophysNovo" method="post">
+
+        <div>
+            <label for="titulo">Titulo</label>
+            <input type ="text" name="titulo" id="title" value="{{conquistas.titulo}}"/>
+         </div>
+
+         <div>
+            <label for="descricao">Descrição</label>
+            <input type="text" name="descricao" id="desc" value="{{conquistas.descricao}}"/>
+        </div>
+
+        <input type="submit" value="Enviar"/>
+
+     </form>

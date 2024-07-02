@@ -16,4 +16,4 @@ const Jogo = db.define("Jogo", {
     },
 });
 
-module.exports = Jogos;
+module.exports = Jogo;

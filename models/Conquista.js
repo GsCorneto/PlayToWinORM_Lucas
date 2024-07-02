@@ -1,9 +1,9 @@
 const db = require("../db/conn")
 const {DataTypes} = require ("sequelize")
 
-const Jogo = require("./usuario")
+const Jogo = require("./Jogo")
 
-const Trofeu = db.define("Trofeu", {
+const Conquista = db.define("Conquista", {
     titulo: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -12,11 +12,9 @@ const Trofeu = db.define("Trofeu", {
         type: DataTypes.STRING,
         allowNull: false,
     },
-}, {
-    tableName: "Trofeis"
-});
+},);
 
-Trofeu.belongsTo(Jogo);
-Jogo.hasMany(Trofeu);
+Conquista.belongsTo(Jogo);
+Jogo.hasMany(Conquista);
 
-module.exports = Trofeu;
+module.exports = Conquista;
