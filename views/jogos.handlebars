@@ -11,7 +11,7 @@
       <tr>
         <td>{{this.id}}</td>
         <td>{{this.titulo}}</td>
-        <td>{{this.descricao}}</td>
+        <td>{{this.preco}}</td>
         <td>
             <a href="/jogos/{{this.id}}/atualizar" >Atualizar</a>
 
@@ -21,7 +21,7 @@
               <input type="submit" value="Excluir"/>
 
             </form>
-            <a href="/jogos/{{this.id}}/conquistas">Ver Conquistas</a>
+            <a href="/jogos/{{this.id}}/trophys">Ver Conquistas</a>
         </td>
       </tr>
     {{/each}}

@@ -11,7 +11,7 @@ const Jogo = db.define("Jogo", {
         required: true,
     },
     preco: {
-        type: DataTypes.NUMBER  ,
+        type: DataTypes.DOUBLE  ,
         required: true,
     },
 });

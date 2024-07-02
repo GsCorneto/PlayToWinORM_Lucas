@@ -121,8 +121,8 @@ app.get("/usuarios/:id/novoCartao", async (req,res) =>{
 //Rotas Jogos
 app.get("/jogos", async (req,res) =>{
     const jogos =  await Jogo.findAll({raw: true})
-    //res.render(`jogos`, { jogos });
-    res.send("gahjvcghskdd")
+    res.render(`jogos`, { jogos });
+    //res.send("gahjvcghskdd")
 });
 
 app.get("/jogos/novo", (req,res) =>{
@@ -194,8 +194,10 @@ app.get("/jogos/:id/trophys", async (req,res) =>{
     res.render(`trophys`, { jogo: jogo.toJSON(), conquistas});
 });
 
-app.get("/jogos/:id/trophysNovo", (req,res) =>{
-    res.render(`formTrophy`);
+app.get("/jogos/:id/trophysNovo", async (req,res) =>{
+    const id = parseInt(req.params.id)
+    const jogo =  await Jogo.findByPk(id, {raw: true})
+    res.render(`formTrophy`, {jogo});
 });
 
 app.post("/jogos/:id/trophysNovo",  async (req,res) =>{
@@ -203,6 +205,7 @@ app.post("/jogos/:id/trophysNovo",  async (req,res) =>{
     const descricao = req.body.descricao;
  
     const dadosConquista = {
+     JogoId: parseInt(req.params.id),
      titulo,
      descricao,
     };
